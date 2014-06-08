@@ -1,21 +1,15 @@
 ﻿define(['durandal/app', 'durandal/system', 'knockout'], function (app, system, ko) {
-    var name = ko.observable('' + app_config['api_base']);
-    var canSayHello = ko.computed(function () {
-        return name() ? true : false;
-    });
-
-    return {
-        displayName: 'What is your name?',
-        name: name,
-        sayHello: function() {
-            app.showMessage('Hello ' + name() + '!', 'Greetings');
+   redirect = undefined;
+   return {
+        activate: function(query) {
+            redirect = query ? query.redirect : '#home';
         },
-        canSayHello: canSayHello,
-        activate: function() {
-            system.log('Lifecycle : activate : hello');
+        submitLogin: function() {
+          location.replace(redirect);
         },
         canActivate: function() {
-          return {redirect: '/login?redirect=#home'};
+          //return {redirect: '/view-composition'};
+          return true;
         },
         binding: function () {
             system.log('Lifecycle : binding : hello');

@@ -1,20 +1,18 @@
 app_config = {
-        'api_base': undefined
+        'api_base': undefined,
         'api_base_mapping': {
-        	'localhost': ['localhost', null],
-        	'tomato-prd01.appspot.com': ['potato-prd01.appspot.com', null],
-        	'tomato-dev01.appspot.com': ['potato-dev01.appspot.com', null]
+        	'http://localhost:8080': 'http://localhost:8081',
+        	'https://tomato-prd01.appspot.com': 'https://potato-prd01.appspot.com',
+        	'https://tomato-dev01.appspot.com': 'https://potato-dev01.appspot.com'
         }
 };
 
-function update_api_base() {
+(function() {
 	hostname = location.hostname.toLowerCase();
 	protocol = location.protocol.toLowerCase();
 	port = location.port;
-	mapping = app_config['api_base_mapping'][hostname];
-	hostname = mapping[0]
-	port = mappting[1] ? mapping[1]: port;
+	url = protocol + "//" + hostname + (port ? (":" + port) : "");
 
-	app_config["api_base"] = protocal + "//" + hostname + ((":" + port) ? port else "");
-};
+	app_config["api_base"] = app_config['api_base_mapping'][url];
+})();
 

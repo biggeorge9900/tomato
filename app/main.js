@@ -6,13 +6,17 @@
         'transitions' : '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-2.3.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
-        'jquery': '../lib/jquery/jquery-1.9.1'
+        'jquery': '../lib/jquery/jquery-1.9.1',
+
     },
     shim: {
         'bootstrap': {
             deps: ['jquery'],
             exports: 'jQuery'
-        }
+        },
+    	'lib': {
+    		deps: ['jquery', 'bootstrap']
+    	}
     }
 });
 

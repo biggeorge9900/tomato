@@ -1,0 +1,387 @@
+/*!
+ * Durandal 2.0.0 Copyright (c) 2012 Blue Spire Consulting, Inc. All Rights Reserved.
+ * Available via the MIT license.
+ * see: http://durandaljs.com or https://github.com/BlueSpire/Durandal for details
+ */
+.page-host {
+  position: relative;
+  top: 40px;
+}
+
+.navbar-fixed-top .navbar-inner {
+  padding-left: 0px;
+  padding-right: 1em;
+}
+
+.navbar-fixed-top .icon-home {
+  font-size: 18px
+}
+
+.well {
+  padding: 8px 0;
+}
+
+.loader {
+  margin: 6px 8px 4px 8px;
+  visibility: hidden;
+}
+
+.loader.active {
+  visibility: visible;
+}
+
+.knockout-samples {
+  margin-top: 20px;
+}
+
+.knockout-samples .liveExample {
+  padding: 20px;
+}
+
+@media ( max-width : 979px) {
+  .page-host {
+    top: 0;
+  }
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+﻿.configuration,.tweets,.tweets td {
+  font-size: 14px;
+}
+
+.configuration {
+  background-color: #DEDEDE;
+  border: 2px solid gray;
+  float: left;
+  height: 31em;
+  padding: 0.5em;
+  border-right-width: 0;
+}
+
+.tweets {
+  width: 55%;
+  border: 2px solid gray;
+  height: 31em;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: Black;
+  color: White;
+  padding: 0.5em;
+  position: relative;
+}
+
+.tweets table {
+  border-width: 0;
+}
+
+.tweets tr {
+  vertical-align: top;
+}
+
+.tweets td {
+  padding: 0.4em 0.3em .8em 0.4em;
+  border-width: 0;
+}
+
+.tweets img {
+  width: 10em;
+}
+
+.tweetInfo {
+  color: Gray;
+  font-size: 0.9em;
+}
+
+.twitterUser {
+  color: #77AAFF;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+input.invalid {
+  border: 1px solid red !important;
+  background-color: #FFAAAA !important;
+}
+
+.listChooser select,.listChooser button {
+  vertical-align: top;
+}
+
+.listChooser select {
+  width: 60%;
+  font-size: 1.2em;
+  height: 1.4em;
+}
+
+.listChooser button {
+  width: 19%;
+  height: 1.68em;
+  float: right;
+}
+
+.currentUsers {
+  height: 24em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.currentUsers button {
+  float: right;
+  height: 2.5em;
+  margin-top: 0.4em;
+  margin-right: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.currentUsers ul,.configuration li {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.currentUsers li {
+  height: 2.4em;
+  font-size: 1.2em;
+  background-color: #A7D0E3;
+  border: 1px solid gray;
+  margin-bottom: 0.3em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-box-shadow: 0 0.2em 0.5em gray;
+  -moz-box-shadow: 0 0.2em 0.5em gray;
+}
+
+.currentUsers li div {
+  padding: 0.6em;
+}
+
+.currentUsers li:hover {
+  background-color: #EEC;
+}
+
+.configuration form label {
+  width: 25%;
+  display: inline-block;
+  text-align: right;
+  overflow: hidden;
+}
+
+.configuration form input {
+  width: 40%;
+  font-size: 1.3em;
+  border: 1px solid silver;
+  background-color: White;
+  padding: 0.1em;
+}
+
+.configuration form button {
+  width: 20%;
+  margin-left: 0.3em;
+  height: 2em;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  font: 0.8em Arial;
+  background-color: #229;
+  color: White;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  display: none;
+}
+
+.configuration select {
+  height: 1.7em;
+}
+
+.configuration button {
+  height: 2em;
+}
+
+.page-host {
+  margin-bottom: 30px;
+}
+
+.navbar-shown {
+  -webkit-transition-property: top;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: top;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-property: top;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: top;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.navbar-hidden {
+  -webkit-transition-property: top;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: top;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-property: top;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: top;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.page-host.navbar-hidden {
+  top: 1px;
+}
+
+.navbar.navbar-hidden {
+  top: -40px;
+}
+
+.navbar.navbar-default {
+  top: -40px;
+}
+
+.navbar.navbar-shown {
+  top: 0px;
+}
+
+#footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 25px;
+  width: 100%;
+  background: #45443F;
+  color: #DFDBD2;
+}
+
+.footer-shown {
+  -webkit-transition-property: bottom;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: bottom;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-property: bottom;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: bottom;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.footer-hidden {
+  -webkit-transition-property: bottom;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: bottom;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-property: bottom;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: bottom;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+#footer.footer-default {
+  bottom: -25px;
+}
+
+#footer.footer-shown {
+  bottom: 0px;
+}
+
+#footer.footer-hidden {
+  bottom: -25px;
+}
+
+#footer-content {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin label {
+  width: 10px;
+  white-space: nowrap;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin .form-field-first {
+  border-top-right-radius: 5px;;
+  border-top-left-radius: 5px;
+}
+
+.form-signin .form-field-last {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.form-signin button {
+  width: 100%;
+  height: 40px;
+}
+
+.signup-label {
+  float: right;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+.signup-link {
+  text-decoration: underline;
+}
+
+/* IE 6 */
+* html #footer {
+  position: absolute;
+  top: expression(( 0 -( footer.offsetHeight)+(document.documentElement.clientHeight?
+     document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe=
+     document.documentElement.scrollTop? document.documentElement.scrollTop:
+     document.body.scrollTop))+'px');
+}
