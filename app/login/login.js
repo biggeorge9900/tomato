@@ -2,7 +2,7 @@
    redirect = undefined;
    return {
         activate: function(query) {
-            redirect = query ? query.redirect : '#home';
+          redirect = query ? query.redirect : '#home';
         },
         submitLogin: function() {
           location.replace(redirect);
@@ -12,20 +12,20 @@
           return true;
         },
         binding: function () {
-            system.log('Lifecycle : binding : hello');
-            return { cacheViews:false }; //cancels view caching for this module, allowing the triggering of the detached callback
+          console.log('Lifecycle : binding : hello');
+           return { cacheViews:false }; //cancels view caching for this module, allowing the triggering of the detached callback
         },
         bindingComplete: function () {
-            system.log('Lifecycle : bindingComplete : hello');
+          console.log('Lifecycle : bindingComplete : hello');
         },
         attached: function (view, parent) {
-            system.log('Lifecycle : attached : hello');
+          console.log('Lifecycle : attached : hello');
         },
         compositionComplete: function (view) {
-            system.log('Lifecycle : compositionComplete : hello');
+          console.log('Lifecycle : compositionComplete : hello');
         },
         detached: function (view) {
-            system.log('Lifecycle : detached : hello');
+          console.log('Lifecycle : detached : hello');
         }
     };
 });

@@ -1,37 +1,37 @@
 ﻿define(['durandal/app', 'durandal/system', 'knockout'], function (app, system, ko) {
     var name = ko.observable('' + app_config['api_base']);
     var canSayHello = ko.computed(function () {
-        return name() ? true : false;
+      return name() ? true : false;
     });
 
     return {
         displayName: 'What is your name?',
         name: name,
         sayHello: function() {
-            app.showMessage('Hello ' + name() + '!', 'Greetings');
+          app.showMessage('Hello ' + name() + '!', 'Greetings');
         },
         canSayHello: canSayHello,
         activate: function() {
-            system.log('Lifecycle : activate : hello');
+          console.log('Lifecycle : activate : hello');
         },
         canActivate: function() {
           return {redirect: '/login?redirect=#home'};
         },
         binding: function () {
-            system.log('Lifecycle : binding : hello');
+          console.log('Lifecycle : binding : hello');
             return { cacheViews:false }; //cancels view caching for this module, allowing the triggering of the detached callback
         },
         bindingComplete: function () {
-            system.log('Lifecycle : bindingComplete : hello');
+          console.log('Lifecycle : bindingComplete : hello');
         },
         attached: function (view, parent) {
-            system.log('Lifecycle : attached : hello');
+          console.log('Lifecycle : attached : hello');
         },
         compositionComplete: function (view) {
-            system.log('Lifecycle : compositionComplete : hello');
+          console.log('Lifecycle : compositionComplete : hello');
         },
         detached: function (view) {
-            system.log('Lifecycle : detached : hello');
+          console.log('Lifecycle : detached : hello');
         }
     };
 });
