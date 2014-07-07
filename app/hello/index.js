@@ -1,5 +1,5 @@
 ﻿define(['durandal/app', 'durandal/system', 'knockout'], function (app, system, ko) {
-    var name = ko.observable('' + app_config['api_base']);
+    var name = ko.observable('' + app_config['api_backend']);
     var canSayHello = ko.computed(function () {
       return name() ? true : false;
     });

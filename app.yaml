@@ -4,7 +4,19 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+libraries:
+- name: PIL
+  version: "1.1.7"
+- name: webob
+  version: "1.2.3"
+- name: lxml
+  version: "2.3"
+
 handlers:
+- url: /api/.*
+  script: _app.application
+  secure: always
+
 - url: /(.*\.css)
   mime_type: text/css
   static_files: \1
@@ -30,19 +42,20 @@ handlers:
   static_files: \1
   upload: (.*\.xml)
 
-# other files
-- url: /(.*\..*)
+# image files
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
   static_files: \1
-  upload: (.*\..*)
+  upload: (.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+# resources
+- url: /resources/(.*\..*)
+  static_files: resources/\1
+  upload: resources/(.*\..*)
 
 # index files
 - url: /samples
   static_files: index-samples.html
   upload: index-samples.html
-
-#- url: /(.+)/
-#  static_files: \1/index.html
-#  upload: (.+)/index.html
 
 - url: /
   static_files: index.html

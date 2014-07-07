@@ -1,0 +1,3 @@
+
+configs = {'webapp2_extras.sessions': {'secret_key': 'something-very-very-secret'},
+           'box_app_client_id': '<box-app-client-id>'}
