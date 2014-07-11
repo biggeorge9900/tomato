@@ -1,4 +1,4 @@
-application: tomato-dev01
+application: unity-one
 version: 1
 runtime: python27
 api_version: 1
@@ -14,50 +14,54 @@ libraries:
 
 handlers:
 - url: /api/.*
-  script: _app.application
+  script: tomato.application
   secure: always
 
 - url: /(.*\.css)
   mime_type: text/css
-  static_files: \1
-  upload: (.*\.css)
+  static_files: _static/\1
+  upload: _static/(.*\.css)
 
 - url: /(.*\.html)
   mime_type: text/html
-  static_files: \1
-  upload: (.*\.html)
+  static_files: _static/\1
+  upload: _static/(.*\.html)
 
 - url: /(.*\.js)
   mime_type: text/javascript
-  static_files: \1
-  upload: (.*\.js)
+  static_files: _static/\1
+  upload: _static/(.*\.js)
 
 - url: /(.*\.txt)
   mime_type: text/plain
-  static_files: \1
-  upload: (.*\.txt)
+  static_files: _static/\1
+  upload: _static/(.*\.txt)
 
 - url: /(.*\.xml)
   mime_type: application/xml
-  static_files: \1
-  upload: (.*\.xml)
+  static_files: _static/\1
+  upload: _static/(.*\.xml)
 
 # image files
 - url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
-  static_files: \1
-  upload: (.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: _static/\1
+  upload: _static/(.*\.(bmp|gif|ico|jpeg|jpg|png))
 
-# resources
-- url: /resources/(.*\..*)
-  static_files: resources/\1
-  upload: resources/(.*\..*)
+- url: /(.*\.(svg|woff|ttf))
+  static_files: _static/\1
+  upload: _static/(.*\.(svg|woff|ttf))
+
+# other resources
+- url: /static/(.*\..*)
+  static_files: _static/\1
+  upload: _static/(.*\..*)
 
 # index files
 - url: /samples
-  static_files: index-samples.html
-  upload: index-samples.html
+  static_files: _static/index-samples.html
+  upload: _static/index-samples.html
 
 - url: /
-  static_files: index.html
-  upload: index.html
+  static_files: _static/index.html
+  upload: _static/index.html
   secure: always
