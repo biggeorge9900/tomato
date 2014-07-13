@@ -3,9 +3,13 @@ Created on Jun 22, 2014
 
 @author: tli
 '''
+from tomato.http.http_responses import HttpResponse, \
+                                       HttpResponseBadRequest,\
+                                       HttpResponseUnauthorized, \
+                                       HttpResponseNotFound
 
-class JsonResponse(object):
-  code = 200
+
+class JsonResponse(HttpResponse):
   content_type = 'application/json'
   obj = {}
   success = True
@@ -20,7 +24,6 @@ class JsonResponse(object):
     else:
       raise Exception('Invalid JsonResponse arguments')
 
-
     if 'success' not in data.keys():
       data.update({'success': self.__class__.success})
     if 'message' not in data.keys():
@@ -29,23 +32,20 @@ class JsonResponse(object):
       data.update({'errorcode': self.__class__.errorcode})
 
     self.obj = data
-    self.code = self.__class__.code
+    self.status_code = self.__class__.status_code
     self.content_type = self.__class__.content_type
 
 
-class JsonResponseBadRequest(JsonResponse):
-  code = 400
+class JsonResponseBadRequest(HttpResponseBadRequest):
   success = False
   message = 'bad-request'
 
 
-class JsonResponseUnauthorized(JsonResponse):
-  code = 401
+class JsonResponseUnauthorized(HttpResponseUnauthorized):
   success = False
   message = 'unauthorized'
 
 
-class JsonResponseNotFound(JsonResponse):
-  code = 404
+class JsonResponseNotFound(HttpResponseNotFound):
   success = False
   message = 'not-found'

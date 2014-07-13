@@ -7,20 +7,32 @@
         'knockout': '../lib/knockout/knockout-2.3.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
-
+        'loadmask': '../lib/spinner/jquery.loadmask.spin',
+        'common': '../common'
     },
     shim: {
-        'bootstrap': {
-            deps: ['jquery'],
-            exports: 'jQuery'
-        },
-    	'lib': {
-    		deps: ['jquery', 'bootstrap']
-    	}
+      'bootstrap': {
+        deps: ['jquery'],
+        exports: 'jQuery'
+      },
+      'common/overrides': {
+        deps: ['jquery', 'bootstrap']
+      },
+      'spin': {
+        deps: ['jquery']
+      },
+      'loadmask': {
+        deps: ['jquery']
+      }
     }
 });
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'lib'],  function (system, app, viewLocator, lib) {
+define(['durandal/system',
+        'durandal/app',
+        'durandal/viewLocator',
+        'common/overrides',
+        'loadmask'],
+       function (system, app, viewLocator) {
     //>>excludeStart("build", true);
     system.debug(true);
     //>>excludeEnd("build");

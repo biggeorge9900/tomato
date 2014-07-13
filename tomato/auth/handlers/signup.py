@@ -5,18 +5,20 @@ Created on Jun 22, 2014
 '''
 from tomato.http.base_handler import BaseHandler
 from tomato.http.json_responses import JsonResponseBadRequest, JsonResponse
-from tomato.const.auth import SIGNUP_CONFIRM_PASSWORD_FAIL, SIGNUP_DUP_EMAIL,\
-  SIGNUP_SUCCESS_TPL
+from tomato.const.auth import SIGNUP_CONFIRM_PASSWORD_FAIL, \
+                              SIGNUP_DUP_EMAIL,\
+                              SIGNUP_SUCCESS_TPL
 
 
 class SignupHandler(BaseHandler):
+
+  user_required = False
 
   def _post_(self):
     full_name = self.request.get('full_name')
     email = self.request.get('email')
     password = self.request.get('password')
     confirm_password = self.request.get('confirm_password')
-
 
     if password != confirm_password:
       return JsonResponseBadRequest(SIGNUP_CONFIRM_PASSWORD_FAIL)
@@ -29,9 +31,8 @@ class SignupHandler(BaseHandler):
       password_raw=password,
       verified=False)
 
-    if not user_data[0]: #user_data is a tuple
+    if not user_data[0]:  # user_data is a tuple
       return JsonResponseBadRequest(SIGNUP_DUP_EMAIL)
-
 
     '''
     user = user_data[1]

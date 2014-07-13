@@ -12,11 +12,13 @@ from webapp2_extras import json
 from google.appengine.ext.webapp import template
 import urllib2
 from tomato.http.json_responses import JsonResponseUnauthorized, JsonResponse
+from tomato.http.http_responses import HttpResponseNotImplemented
 
 
 def check_user(handler):
   """
-    Decorator that checks if there's a user associated with the current session.
+    Decorator that checks if there's a user associated with
+    the current session.
     Will also fail if there's no session present.
   """
   def check_login(self, *args, **kwargs):
@@ -101,7 +103,7 @@ class BaseHandler(webapp2.RequestHandler):
       self.session_store.save_sessions(self.response)
 
   def _process_response(self, response):
-    self.response.set_status(response.code)
+    self.response.set_status(response.status_code)
     jsonp_callback = self.request.get('jsonp_callback')
     if jsonp_callback:
       self.response.headers['Content-Type'] = 'application/javascript'
@@ -143,24 +145,24 @@ class BaseHandler(webapp2.RequestHandler):
 
   def _get_(self, *args, **kwargs):
     """
-    Subclass will implement; default not allowed
+    Subclass will implement; default not implemented
     """
-    self.abort(405)
+    self.abort(HttpResponseNotImplemented.status_code)
 
   def _put_(self, *args, **kwargs):
     """
-    Subclass will implement; default not allowed
+    Subclass will implement; default not implemented
     """
-    self.abort(405)
+    self.abort(HttpResponseNotImplemented.status_code)
 
   def _post_(self, *args, **kwargs):
     """
-    Subclass will implement; default not allowed
+    Subclass will implement; default not implemented
     """
-    self.abort(405)
+    self.abort(HttpResponseNotImplemented.status_code)
 
   def _delete_(self, *args, **kwargs):
     """
-    Subclass will implement; default not allowed
+    Subclass will implement; default not implemented
     """
-    self.abort(405)
+    self.abort(HttpResponseNotImplemented.status_code)

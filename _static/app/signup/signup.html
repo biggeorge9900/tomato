@@ -1,13 +1,35 @@
 ﻿<div class="container">
 
-      <form class="form-signin" role="form">
+      <form id="signin-form" class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign up</h2>
-        <input type="text" class="form-control form-field-first" placeholder="Full name" required autofocus>
-        <input type="email" class="form-control" placeholder="Email address" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <input type="password" class="form-control form-field-last" placeholder="Confirm Password" required>
-        <button class="btn btn-lg btn-primary" type="submit">Sign up</button>
-           <span class='signup-label'>Already a member? <a href="#login" class="signup-link">Sign in</a></span>
+        <input type="text"
+               class="form-control form-field-first"
+               placeholder="Full name"
+               name="full_name"
+               data-bind="value: model.full_name"
+               required autofocus>
+        <input type="email"
+               class="form-control"
+               placeholder="Email address"
+               name="email"
+               data-bind="value: model.email"
+               required>
+        <input type="password"
+               class="form-control"
+               placeholder="Password"
+               name='password'
+               data-bind="value: model.password"
+               required>
+        <input type="password"
+               class="form-control form-field-last"
+               placeholder="Confirm Password"
+               name="password_confirm"
+               data-bind="value: model.password_confirm"
+               required>
+        <button class="btn btn-lg btn-primary"
+                data-bind="click: submit, enable: canSubmit"
+                type="submit">Sign up</button>
+        <span class='signup-label'>Already a member? <a href="#login" class="signup-link">Sign in</a></span>
       </form>
 
 </div>

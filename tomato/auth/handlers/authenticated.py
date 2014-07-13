@@ -6,6 +6,7 @@ Created on Jun 22, 2014
 from tomato.http.base_handler import BaseHandler
 from tomato.http.json_responses import JsonResponse
 
+
 class AuthenticatedHandler(BaseHandler):
   '''
   '''

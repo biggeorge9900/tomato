@@ -1,5 +1,5 @@
 
-from gdn import auth
+from . import auth
 
 routes = []
 # authentication related routes

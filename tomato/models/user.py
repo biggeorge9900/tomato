@@ -3,6 +3,7 @@ from webapp2_extras.appengine.auth.models import User as OriginUser
 from google.appengine.ext import ndb
 from webapp2_extras import security
 
+
 class User(OriginUser):
     def set_password(self, raw_password):
         """Sets the password for the current user
@@ -10,7 +11,8 @@ class User(OriginUser):
         :param raw_password:
             The raw password which will be hashed and stored
         """
-        self.password = security.generate_password_hash(raw_password, length=12)
+        self.password = security.generate_password_hash(raw_password,
+                                                        length=12)
 
     @classmethod
     def get_by_auth_token(cls, user_id, token, subject='auth'):

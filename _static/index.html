@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="lib/durandal/css/durandal.css" />
         <link rel="stylesheet" href="css/app.css" />
         <link rel="stylesheet" href="css/app-responsive.css" />
+        <link rel="stylesheet" href="lib/spinner/jquery.loadmask.spin.css"  type="text/css" />
 
         <script type="text/javascript">
             if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -31,6 +32,8 @@
             }
         </script>
         <script src="app/config.js" type="text/javascript"></script>
+        <!-- spin.js does not work when loaded by requirejs through shim in config -->
+        <script src="lib/spinner/spin.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="applicationHost">
