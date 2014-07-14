@@ -1,9 +1,9 @@
 app_config = {
-        'api_backend': undefined,
-        'api_backend_mapping': {
-        'http://localhost:8080': 'http://localhost:8081',
-        'https://tomato-prd01.appspot.com': 'https://potato-prd01.appspot.com',
-        'https://tomato-dev01.appspot.com': 'https://potato-dev01.appspot.com'}
+  'api_backend': undefined,
+  'api_backend_mapping': {
+  'http://localhost:8080': 'http://localhost:8081',
+  'https://tomato-prd01.appspot.com': 'https://potato-prd01.appspot.com',
+  'https://tomato-dev01.appspot.com': 'https://potato-dev01.appspot.com'}
 };
 
 (function() {
